@@ -1,0 +1,16 @@
+version: "3.0"
+services:
+  utility:
+    image: node
+    working_dir: /app
+    entrypoint: ["npm"]
+    volumes:
+      - ".:/app"
+  backend:
+    build:
+      context: .
+      dockerfile: dockerfile.backend
+    volumes:
+      - ".:/app"
+    ports:
+      - 8080:8080
