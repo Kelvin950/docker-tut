@@ -14,3 +14,13 @@ services:
       - ".:/app"
     ports:
       - 8080:8080
+  mongodb:
+    image: mongo
+    container_name: appmongodb
+    volumes:
+      - "data:/data/db"
+
+
+
+volumes:
+  data:
